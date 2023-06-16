@@ -49,12 +49,12 @@
 		</div>
 		
 		<p>
-			<mark>[Experimental]</mark> - utm_state: this variable shows the current state of the UTM parameters, and can have 3 possible values.  
-			<br/><br/>
-			Note that this UTM field is non-standard. and therefore will not be picked up automatically by standard analytics.  It must be manually correlated by the analytics expert.
+			<mark>[Experimental]</mark> - utm_state: this variable shows the current state of the UTM parameters, and can have 3 possible values that denote the user's behavior in relation to the UTMs.
 			<br/><br/>
 			This field can be used for basic attribution - if the value is "localStorage", that means the user has left the site and come back to it later.   
-
+			<br/><br/>
+			Note that this UTM field is non-standard. and therefore will not be picked up automatically by standard analytics.  It must be manually correlated by the analytics expert.
+			
 			<ul style="margin-top: 0px;">
 				<li>"url" - The UTM params are present in the URL.  Lasts until the user navigates to a new page.</li>
 				<li>"sessionStorage" - The UTM params are present in the user's session.  Lasts until the user closes the tab they're in.</li>
