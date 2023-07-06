@@ -41,7 +41,7 @@ $(document).ready(function(){
 
 			if(searchParams.has(param)) {
 				//if UTM parameters are present in URL
-				console.log("===== UTM values detected - in URL =====");
+				//console.log("===== UTM values detected - in URL =====");
 				utm_state = "url";
 				paramValue = searchParams.get(param);
 				sessionStorage.setItem(param, paramValue);
@@ -49,18 +49,18 @@ $(document).ready(function(){
 
 			}else if(sessionStorage.getItem(param)){
 				//if UTM parameters are not present in URL, but are in SessionStorage
-				console.log("===== UTM values detected - in short-term session =====");
+				//console.log("===== UTM values detected - in short-term session =====");
 				utm_state = "sessionStorage";
 				paramValue = sessionStorage.getItem(param);
 
 			}else if(localStorage.getItem(param)){
 				//if UTM parameters are not present in URL or SessionStorage, but are in LocalStorage
-				console.log("===== UTM values detected - in long-term session =====");
+				//console.log("===== UTM values detected - in long-term session =====");
 				utm_state = "localStorage";
 				paramValue = localStorage.getItem(param);
 
 			}
-			//console.log("UTM detected: "+param+": "+paramValue);
+			console.log("UTM detected: "+param+": "+paramValue+", utm_state: "+utm_state);
 			//return paramValue;
 			return {paramValue, utm_state};
 
@@ -104,19 +104,29 @@ $(document).ready(function(){
 			});
 		};
 
+	/***** Fill in UTM values in form *****/
 		function utm_form_fill() {
-			$('form').each(function(){
-				$(this).find('input[name="utm_source"]').val(sessionStorage.getItem("utm_source"));
-				$(this).find('input[name="utm_medium"]').val(sessionStorage.getItem("utm_medium"));
-				$(this).find('input[name="utm_campaign"]').val(sessionStorage.getItem("utm_campaign"));
-				$(this).find('input[name="utm_term"]').val(sessionStorage.getItem("utm_term"));
-				$(this).find('input[name="utm_content"]').val(sessionStorage.getItem("utm_content"));
-				console.log("UTM form inputs filled");
-			});
+			console.log("form fill run");
+			//Long term cookie storage
+			$('input[name="utm_source"]').val(utm_source.paramValue);
+			$('input[name="utm_medium"]').val(utm_medium.paramValue);
+			$('input[name="utm_campaign"]').val(utm_campaign.paramValue);
+			$('input[name="utm_term"]').val(utm_term.paramValue);
+			$('input[name="utm_content"]').val(utm_content.paramValue);
+			$('input[name="utm_state"]').val(utm_campaign.utm_state);
+			console.log("UTM form inputs filled");
 		};
 
-		//Run functions
-		utm_form_add();
-		utm_form_fill();
+	/***** Run Functions *****/
+		//utm_form_add();
 
+		//setTimeout(utm_form_fill(), 5000);
+
+		setTimeout(() => {
+			utm_form_fill()
+		  	console.log("Delayed for 1000ms.");
+		}, 1000);
+
+		//utm_form_fill();
 });
+
