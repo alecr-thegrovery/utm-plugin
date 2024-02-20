@@ -38,7 +38,8 @@ Note that this UTM field is non-standard, and therefore will not be picked up au
 
 ---
 
-## Future Features
-- vanilla JS rebuild
-- more clearly defined 'returning user' fields
-- 
+## Coming Features
+- [x] vanilla JS rebuild
+- [x] optimize code
+- [ ] distribute via CDN
+- [ ] more clearly defined 'returning user' fields & events
