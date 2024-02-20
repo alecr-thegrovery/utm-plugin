@@ -71,22 +71,19 @@
 		<p>
 			Automatically  adds and auto-fills hidden form fields for the user's UTM values.
 		</p>
-		<p>
-			This feature is made up of 2 separate functions: 
-			<ul>
-				<li>
-					<mark>utm_form_add()</mark> - invisibly add a set of input fields to all forms on page.
-				</li>
-				<li>
-					<mark>utm_form_fill()</mark> - fills form inputs with UTM values in storage.
-				</li>
-			</ul>
-		</p>
+		
 		<form action="#?formSuccess=1" method="post">
-			<p>Test Form</p>
+			<p>Test Form - inspect to verify hidden fields</p>
 			<input type="text" name="name" placeholder="Name" required>
 			<input type="email" name="email" placeholder="Email" required>
 			<!-- <div class="hm_utm_input_group"></div> -->
+			<div class="utm_input_group">
+				<input type="hidden" name="utm_source" />
+				<input type="hidden" name="utm_medium" />
+				<input type="hidden" name="utm_campaign" />
+				<input type="hidden" name="utm_term" />
+				<input type="hidden" name="utm_content" />
+			</div>
 			<input type="submit" value="SUBMIT" name="">
 		</form>
 	</section>
@@ -96,7 +93,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 	
 	<!-- Analytics Plugin -->
-	<script type="text/javascript" src="index-vanilla.js"></script>
+	<script type="text/javascript" src="index.js"></script>
 	<!-- Initialization, Function Calls, etc -->
 	<!-- <script type="text/javascript" src="script.js"></script> -->
 	<!-- <script type="text/javascript" src="utility.js"></script> -->
