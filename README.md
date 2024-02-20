@@ -34,3 +34,11 @@ Note that this UTM field is non-standard, and therefore will not be picked up au
 - "url" - The UTM params are present in the URL.  Lasts until the user navigates to a new page.
 - "sessionStorage" - The UTM params are present in the user's session.  Lasts until the user closes the tab they're in.
 - "localStorage" - The UTM params are present in the user's long-term cookie storage.  Lasts until the user clears their browser cache.
+
+
+---
+
+## Future Features
+- vanilla JS rebuild
+- more clearly defined 'returning user' fields
+- 
