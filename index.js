@@ -23,17 +23,31 @@ UTM parameters supported:
 	utm_content
 	
 ********************************************/
-$(document).ready(function(){
-
-	/* =============================== */
-	/* ===== Grab URL Parameters  ===== */
-	/* =============================== */
-		var searchParams = new URLSearchParams(window.location.search); 
-
 	console.log("===== UTM tracking initialized =====");
 
-	/***** Functions *****/
+	/* =========================== */
+	/* ===== Define DOM Variables  ===== */
+	/* =========================== */
+		var inputUtmSource = document.querySelector('input[name="utm_source"]');
+		var inputUtmMedium = document.querySelector('input[name="utm_medium"]');
+		var inputUtmCampaign = document.querySelector('input[name="utm_campaign"]');
+		var inputUtmTerm = document.querySelector('input[name="utm_term"]');
+		var inputUtmContent = document.querySelector('input[name="utm_content"]');
+		var inputUtmState = document.querySelector('input[name="utm_state"]');
+		
+		/* ===== UTM Tester vars  ===== */
+		var tester = document.querySelector(".UTMTesterTool");
+		var testerUtmSource = document.querySelector(".UTMTesterTool [data-utm='utm_source']");
+		var testerUtmMedium = document.querySelector(".UTMTesterTool [data-utm='utm_medium']");
+		var testerUtmCampaign = document.querySelector(".UTMTesterTool [data-utm='utm_campaign']");
+		var testerUtmTerm = document.querySelector(".UTMTesterTool [data-utm='utm_term']");
+		var testerUtmContent = document.querySelector(".UTMTesterTool [data-utm='utm_content']");
+		var testerUtmState = document.querySelector(".UTMTesterTool [data-utm='utm_state']");
 
+	/* ============================= */
+	/* ===== Primary Functions  ===== */
+	/* ============================= */
+		/***** Log UTM values *****/	
 		function utm_logger(param) {
 			var searchParams = new URLSearchParams(window.location.search); 
 			var paramValue = "";
@@ -66,7 +80,33 @@ $(document).ready(function(){
 
 		};
 
-	/***** Run Functions *****/
+		/***** Fill in UTM values in form *****/
+		function utm_form_fill() {
+			console.log("form fill run");
+			inputUtmSource.value = utm_source.paramValue;
+			inputUtmMedium.value = utm_medium.paramValue;
+			inputUtmCampaign.value = utm_campaign.paramValue;
+			inputUtmTerm.value = utm_term.paramValue;
+			inputUtmContent.value = utm_content.paramValue;
+			inputUtmState.value = utm_campaign.utm_state;
+			console.log("UTM form inputs filled");
+		};
+
+		/***** Fill in testing tool *****/
+		function utm_test_fill() {
+			testerUtmSource.textContent = utm_source.paramValue;
+	  		testerUtmMedium.textContent = utm_medium.paramValue;
+	  		testerUtmCampaign.textContent = utm_campaign.paramValue;
+	  		testerUtmTerm.textContent = utm_term.paramValue;
+	  		testerUtmContent.textContent = utm_content.paramValue;
+	  		testerUtmState.textContent = utm_state;
+		};
+
+	/* ======================== */
+	/* ===== Run Functions ===== */
+	/* ======================== */
+		
+		/***** Grab UTMs *****/
 		var utm_source = utm_logger("utm_source");
 		var utm_medium = utm_logger("utm_medium");
 		var utm_campaign = utm_logger("utm_campaign");
@@ -74,59 +114,12 @@ $(document).ready(function(){
 		var utm_content = utm_logger("utm_content");
 		var utm_state = utm_source.utm_state;
 
-
-		if($(".UTMTesterTool").length){
-			console.log("===== UTM testing tool present =====");
-			$(".UTMTesterTool [data-utm='utm_source']").text(utm_source.paramValue);
-			$(".UTMTesterTool [data-utm='utm_medium']").text(utm_medium.paramValue);
-			$(".UTMTesterTool [data-utm='utm_campaign']").text(utm_campaign.paramValue);
-			$(".UTMTesterTool [data-utm='utm_term']").text(utm_term.paramValue);
-			$(".UTMTesterTool [data-utm='utm_content']").text(utm_content.paramValue);
-			$(".UTMTesterTool [data-utm='utm_state']").text(utm_state);
-		}
-
-
-	/***** Add UTM inputs to forms *****/
-		var utm_input_code='\
-		<div class="utm_input_group">\
-			<input type="hidden" name="utm_source" />\
-			<input type="hidden" name="utm_medium" />\
-			<input type="hidden" name="utm_campaign" />\
-			<input type="hidden" name="utm_term" />\
-			<input type="hidden" name="utm_content" />\
-		</div>\
-		'
-
-		function utm_form_add() {
-			$('form').each(function(){
-				$(this).prepend(utm_input_code);
-				console.log("UTM form input group added");
-			});
-		};
-
-	/***** Fill in UTM values in form *****/
-		function utm_form_fill() {
-			console.log("form fill run");
-			//Long term cookie storage
-			$('input[name="utm_source"]').val(utm_source.paramValue);
-			$('input[name="utm_medium"]').val(utm_medium.paramValue);
-			$('input[name="utm_campaign"]').val(utm_campaign.paramValue);
-			$('input[name="utm_term"]').val(utm_term.paramValue);
-			$('input[name="utm_content"]').val(utm_content.paramValue);
-			$('input[name="utm_state"]').val(utm_campaign.utm_state);
-			console.log("UTM form inputs filled");
-		};
-
-	/***** Run Functions *****/
-		//utm_form_add();
-
-		//setTimeout(utm_form_fill(), 5000);
-
+		/***** Fill form after X seconds *****/
 		setTimeout(() => {
-			utm_form_fill()
-		  	console.log("Delayed for 1000ms.");
+			utm_form_fill();
+		  	console.log("UTM form fill - delayed for 1000ms.");
+			if(tester){
+				utm_test_fill();
+			}
 		}, 1000);
-
-		//utm_form_fill();
-});
-
+		
