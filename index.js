@@ -82,14 +82,14 @@ UTM parameters supported:
 
 		/***** Fill in UTM values in form *****/
 		function utm_form_fill() {
-			console.log("form fill run");
+			//console.log("form fill run");
 			inputUtmSource.value = utm_source.paramValue;
 			inputUtmMedium.value = utm_medium.paramValue;
 			inputUtmCampaign.value = utm_campaign.paramValue;
 			inputUtmTerm.value = utm_term.paramValue;
 			inputUtmContent.value = utm_content.paramValue;
 			inputUtmState.value = utm_campaign.utm_state;
-			console.log("UTM form inputs filled");
+			//console.log("UTM form inputs filled");
 		};
 
 		/***** Fill in testing tool *****/
@@ -117,7 +117,7 @@ UTM parameters supported:
 		/***** Fill form after X seconds *****/
 		setTimeout(() => {
 			utm_form_fill();
-		  	console.log("UTM form fill - delayed for 1000ms.");
+		  	//console.log("UTM form fill - delayed for 1000ms.");
 			if(tester){
 				utm_test_fill();
 			}
