@@ -21,13 +21,14 @@ UTM parameters supported:
 	utm_campaign
 	utm_term
 	utm_content
+	utm_state - EXPERIMENTAL
 	
 ********************************************/
 	console.log("===== UTM tracking initialized =====");
 
-	/* =========================== */
+	/* =============================== */
 	/* ===== Define DOM Variables  ===== */
-	/* =========================== */
+	/* =============================== */
 		var inputUtmSource = document.querySelector('input[name="utm_source"]');
 		var inputUtmMedium = document.querySelector('input[name="utm_medium"]');
 		var inputUtmCampaign = document.querySelector('input[name="utm_campaign"]');
