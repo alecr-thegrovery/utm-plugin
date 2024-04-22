@@ -41,5 +41,7 @@ Note that this UTM field is non-standard, and therefore will not be picked up au
 ## Coming Features
 - [x] vanilla JS rebuild
 - [x] optimize code
+- [x] Matomo MTM syntax support
 - [ ] distribute via CDN
+- [ ] set up to work via Google Tag Manager
 - [ ] more clearly defined 'returning user' fields & events
