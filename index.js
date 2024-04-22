@@ -193,7 +193,7 @@ UTM parameters supported:
 				mtm_test_fill();
 			}
 			
-			//utm_form_fill();
+			utm_form_fill();
 			mtm_form_fill();
 		  	//console.log("UTM form fill - delayed for 1000ms.");
 						
