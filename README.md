@@ -1,5 +1,6 @@
-# utm-plugin
-Standalone UTM sessionization and tracking plugin
+# Advanced UTMs Plugin
+
+Standalone persistent UTM sessionization and tracking plugin
 
 Simple Javascript plugin for detecting UTM parameters in a URL, saving them to the user's session, and using those UTM values throughout the user's lifecycle.
 
@@ -45,3 +46,4 @@ Note that this UTM field is non-standard, and therefore will not be picked up au
 - [ ] distribute via CDN
 - [ ] set up to work via Google Tag Manager
 - [ ] more clearly defined 'returning user' fields & events
+- [ ] additional 'slots' for including data from multiple previous campaigns

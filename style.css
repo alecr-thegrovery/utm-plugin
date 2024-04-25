@@ -9,6 +9,11 @@ body{
 	font-size: 1.25vw;
 	line-height:1.35;
 }
+
+h1{
+	margin-bottom: 0px;
+}
+
 .box{
 	border: solid 2px #000;
 	display: flex;
