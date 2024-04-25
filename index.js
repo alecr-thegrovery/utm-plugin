@@ -49,12 +49,12 @@ UTM parameters supported:
 		
 		/* ===== UTM Tester vars  ===== */
 		//var UtmTester = document.querySelector(".UTMTesterTool");
-		var testerUtmSource = document.querySelector(".UTMTesterTool [data-utm='mtm_source']");
-		var testerUtmMedium = document.querySelector(".UTMTesterTool [data-utm='mtm_medium']");
-		var testerUtmCampaign = document.querySelector(".UTMTesterTool [data-utm='mtm_campaign']");
-		var testerUtmTerm = document.querySelector(".UTMTesterTool [data-utm='mtm_term']");
-		var testerUtmContent = document.querySelector(".UTMTesterTool [data-utm='mtm_content']");
-		var testerUtmState = document.querySelector(".UTMTesterTool [data-utm='mtm_state']");
+		var testerUtmSource = document.querySelector(".UTMTesterTool [data-utm='utm_source']");
+		var testerUtmMedium = document.querySelector(".UTMTesterTool [data-utm='utm_medium']");
+		var testerUtmCampaign = document.querySelector(".UTMTesterTool [data-utm='utm_campaign']");
+		var testerUtmTerm = document.querySelector(".UTMTesterTool [data-utm='utm_term']");
+		var testerUtmContent = document.querySelector(".UTMTesterTool [data-utm='utm_content']");
+		var testerUtmState = document.querySelector(".UTMTesterTool [data-utm='utm_state']");
 
 		/* ===== MTM Tester vars  ===== */
 		//var MtmTester = document.querySelector(".UTMTesterTool");
